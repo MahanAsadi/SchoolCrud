@@ -1,0 +1,49 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    @{ 
+        List<Demo.Data.Student> list = ViewBag.data as List<Demo.Data.Student>;
+
+    }
+    <div class="container" >
+        <h2>لیست دانش اموزان</h2>
+        <p>اطلاعات کلی دانش اموزان</p>
+        <a class="btn btn-success" href="create">ایجاد ردیف جدید</a>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>نام</th>
+                    <th>نام خانوادگی</th>
+                    <th>سن</th>
+                    <th>عملیات</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in list)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@item.Surname</td>
+                        <td>@item.Age</td>
+                        <td><a href="~/student/edit/@item.StudentId" class="btn btn-warning">ویرایش</a>|<a  href="~/student/delete/@item.StudentId" class="btn btn-danger">حذف</a></td>
+                    </tr>
+                }
+
+
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
