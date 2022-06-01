@@ -24,7 +24,7 @@ namespace Demo.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create(Student student)
-        {
+        {//hello im here
             context.Students.Add(student);
             context.SaveChanges();
             return RedirectToAction("index");
@@ -32,6 +32,7 @@ namespace Demo.Controllers
 
         public IActionResult Edit(int id)
         {
+            //hello im here
             ViewBag.item= context.Students.Find(id);
             return View();
         }

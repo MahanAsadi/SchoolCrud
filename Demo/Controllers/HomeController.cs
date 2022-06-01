@@ -19,7 +19,7 @@ namespace Demo.Controllers
         }
 
         public IActionResult Index()
-        {
+        {//hello im here
             ViewBag.name = "amir";
             return View();
         }
